@@ -5,12 +5,7 @@ A game of atari-go written in rust. Idea taken from https://github.com/joelfenwi
 # Installation
 1. Download rust and follow instructions via https://www.rust-lang.org/en-US/install.html
 
-2. Clone source with git: 
-
-    ```sh
-    $ git clone https://github.com/ColeCachoo/nogors.git
-    $ cd nogors
-    ```
+2. Clone this repository.
 
 3. Build:
 
@@ -21,11 +16,13 @@ A game of atari-go written in rust. Idea taken from https://github.com/joelfenwi
 # Usage
 
 Run nogors with 2 computers on a 7x7 board:
+
     ```sh
     $ cargo run c c 7 7
     ```
 
 Run nogors with 2 human players on a 15x10 board:
+
     ```sh
     $ cargo run h h 15 10
     ```
