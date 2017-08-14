@@ -221,6 +221,7 @@ impl Nogo {
                     },
                     Err(_) => {
                         eprintln!("Failed to save file");
+                        self.is_save = false;
                         continue;
                     },
                 };
