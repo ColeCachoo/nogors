@@ -103,27 +103,13 @@ impl GameBoard {
 
     /// Inserts the letter of current player on to board, making sure it's
     /// a valid position.
-    /// 
-    /// Arguments:
-    ///     h: The y coordinate with top left of board being 0, 0 and only accepting
-    ///         positive numbers.
-    ///         
-    ///     w: The x coordinate with top left of board being 0, 0 and only accepting
-    ///         positive numbers.
-    ///         
-    ///     current_player: Player is either 'O' or 'X'. This places corresponding
-    ///         letter on game board.
-    ///         
-    /// Returns: 
-    ///     Result with an empty Ok if nothing went wrong, otherwise returns
-    ///     appropriate error message.
     pub fn insert_move(&mut self, h: usize, w: usize, current_player: &Player) 
         -> Result<(), Box<error::Error>> 
     {
         if h >= self.height {
-            return Err(From::from("Invalid X coordinate"));
+            return Err(From::from("Invalid row"));
         } else if w >= self.width {
-            return Err(From::from("Invalid Y coordinate"));
+            return Err(From::from("Invalid column"));
         }
         
         let player = match *current_player {
@@ -168,16 +154,6 @@ impl GameBoard {
     /// Checks if a piece has any liberties. Liberties are places a piece 
     /// can grow in to ('.'s). Above, below, left, and right of a piece. Same 
     /// pieces touching are linked. If one of them has a liberty they all have a liberty.
-    /// 
-    /// Arguments:
-    ///     h: The y coordinate with top left of board being 0, 0 and only accepting
-    ///         positive numbers.
-    ///         
-    ///     w: The x coordinate with top left of board being 0, 0 and only accepting
-    ///         positive numbers.
-    ///     
-    /// Returns: 
-    ///     True if a liberty was found. False if no liberty was found.
     fn check_liberty(&mut self, h: usize, w: usize) -> bool {
         let mut liberty = false;
         // - 1 to set last_height and last_width to real end of vec.
