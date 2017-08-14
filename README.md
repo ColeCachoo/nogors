@@ -17,7 +17,7 @@ A game of atari-go written in rust. Idea taken from https://github.com/joelfenwi
 
     $ ./nogors p1_type p2_type [height width | filename]
 
-Run nogors with 2 computers on a 7x7 board:
+Run nogors with 2 computer players on a 7x7 board:
 
     $ cargo run c c 7 7
 
