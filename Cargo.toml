@@ -1,0 +1,6 @@
+[package]
+name = "nogors"
+version = "0.1.0"
+authors = ["cole"]
+
+[dependencies]

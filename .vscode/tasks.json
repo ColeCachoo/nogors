@@ -1,0 +1,38 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "cargo build",
+            "command": "cargo",
+            "args": [
+                "build"
+            ],
+            "isBuildCommand": true
+        },
+        {
+            "taskName": "cargo run",
+            "command": "cargo",
+            "args": [
+                "run"
+            ]
+        },
+        {
+            "taskName": "cargo test",
+            "command": "cargo",
+            "args": [
+                "test"
+            ],
+            "isTestCommand": true
+        },
+        {
+            "taskName": "clippy",
+            "command": "rustup", 
+            "args": [
+                "run nightly cargo clippy",
+            ]
+        }
+    ]
+}
