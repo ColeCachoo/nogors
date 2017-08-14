@@ -215,8 +215,14 @@ impl Nogo {
             
             if self.is_save {
                 match self.save(&board, computer1.as_ref(), computer2.as_ref(), &current_player) {
-                    Ok(_)  => continue,     // Don't change player or try to place move.
-                    Err(_) => eprintln!("Failed to save file"),
+                    Ok(_)  => {
+                        self.is_save = false;
+                        continue;     // Don't change player or try to place move.
+                    },
+                    Err(_) => {
+                        eprintln!("Failed to save file");
+                        continue;
+                    },
                 };
             }
 
@@ -250,7 +256,7 @@ impl Nogo {
             c2: Option<&Computer>, 
             player: &Player) -> Result<(), Box<Error>> {
 
-        let mut file = File::create(self.filename.clone())?;
+        let mut file = File::create(&self.filename)?;
 
         // 0 means O is next to play. 1 means X is next to play.
         let next_to_play = match *player {
