@@ -13,16 +13,45 @@ A game of atari-go written in rust. Idea taken from https://github.com/joelfenwi
     $ cargo build 
     ```
 
-# Usage
+# Starting program
+
+    $ ./nogors p1_type p2_type [height width | filename]
 
 Run nogors with 2 computers on a 7x7 board:
 
-    ```sh
     $ cargo run c c 7 7
-    ```
 
 Run nogors with 2 human players on a 15x10 board:
 
-    ```sh
     $ cargo run h h 15 10
-    ```
+
+Run nogors with 1 computer and 1 human player from a previously saved file:
+
+    $ cargo run c h saved.txt
+
+# Save to a file
+
+During your turn enter "w [filename]":
+
+    Player X> 3 6
+    /-------\
+    |XXX....|
+    |.XX.O..|
+    |.....O.|
+    |......X|
+    |......O|
+    |O....OO|
+    |.......|
+    \-------/
+    Player O> 6 6
+    /-------\
+    |XXX....|
+    |.XX.O..|
+    |.....O.|
+    |......X|
+    |......O|
+    |O....OO|
+    |......O|
+    \-------/
+    Player X> w save.txt
+    Saving to save.txt
